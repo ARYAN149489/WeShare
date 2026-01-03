@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+// Use environment variable for API URL, fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 const BrowseDonationRequests = () => {
   const navigate = useNavigate();
   const [requests, setRequests] = useState([]);
@@ -25,9 +28,7 @@ const BrowseDonationRequests = () => {
       const token = localStorage.getItem('token');
       const params = {};
       if (filters.category) params.category = filters.category;
-      if (filters.urgency) params.urgency = filters.urgency;
-
-      const response = await axios.get('http://localhost:5001/api/requests/all-open', {
+      if (filters.urgency) params.urgency = filters.urgency;      const response = await axios.get(`${API_URL}/requests/all-open`, {
         headers: { 'x-auth-token': token },
         params
       });
@@ -49,10 +50,9 @@ const BrowseDonationRequests = () => {
   const handleFulfillRequest = async () => {
     setShowModal(false);
     setFulfilling(selectedRequest._id);
-    try {
-      const token = localStorage.getItem('token');
+    try {      const token = localStorage.getItem('token');
       await axios.post(
-        `http://localhost:5001/api/requests/${selectedRequest._id}/fulfill`,
+        `${API_URL}/requests/${selectedRequest._id}/fulfill`,
         {},
         { headers: { 'x-auth-token': token } }
       );

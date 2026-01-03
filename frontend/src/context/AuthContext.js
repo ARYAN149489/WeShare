@@ -1,6 +1,9 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+// Use environment variable for API URL, fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 const AuthContext = createContext(null);
 
 export const useAuth = () => {
@@ -25,10 +28,9 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers.common['x-auth-token'] = token;
     }
     setLoading(false);
-  }, []);
-  const login = async (email, password) => {
+  }, []);  const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+      const response = await axios.post(`${API_URL}/auth/login`, { email, password });
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
@@ -44,10 +46,9 @@ export const AuthProvider = ({ children }) => {
         message: error.response?.data?.message || 'Login failed' 
       };
     }
-  };
-  const register = async (userData) => {
+  };  const register = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', userData);
+      const response = await axios.post(`${API_URL}/auth/register`, userData);
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
