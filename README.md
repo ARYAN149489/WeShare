@@ -84,34 +84,6 @@ The app will be running at:
 
 ---
 
-## 📁 Project Structure
-
-```
-├── backend/              # Node.js + Express backend
-│   ├── models/          # MongoDB schemas
-│   ├── routes/          # API endpoints
-│   ├── middleware/      # Auth & validation
-│   ├── utils/           # Helper functions
-│   └── server.js        # Entry point
-│
-├── frontend/            # React frontend
-│   ├── src/
-│   │   ├── components/  # Reusable components
-│   │   ├── pages/       # Page components
-│   │   ├── context/     # State management
-│   │   └── services/    # API calls
-│   └── public/
-│
-└── documentation/       # Project docs & diagrams
-```
-
----
-
-## 🔐 Test Credentials
-
-See [LOGIN_CREDENTIALS.md](./LOGIN_CREDENTIALS.md) for test account details.
-
----
 
 ## 📚 API Documentation
 
