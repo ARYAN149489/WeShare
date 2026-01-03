@@ -118,17 +118,6 @@ For detailed API documentation, see the [API Guide](./documentation/API_GUIDE.md
 
 ---
 
-## 🚢 Deployment
-
-The application is ready for deployment on:
-- **Frontend:** Vercel, Netlify, AWS S3 + CloudFront
-- **Backend:** Heroku, Railway, Render, AWS EC2
-- **Database:** MongoDB Atlas (already configured)
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions.
-
----
-
 ## 🔮 Future Enhancements
 
 1. **📸 Image Upload System**
@@ -184,15 +173,9 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [Your GitHub](https://github.com/yourusername)
+- **Aryan Kansal**  - [ARYAN149489](https://github.com/ARYAN149489)
 
 ---
 
@@ -200,16 +183,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - MongoDB Atlas for database hosting
 - React community for excellent documentation
-- All contributors and supporters
 
 ---
-
-## 📞 Support
-
-For support, email support@donor-receiver-platform.com or open an issue in the repository.
-
----
-
-**Made with ❤️ to help communities**
 
 ![Star this repo](https://img.shields.io/github/stars/yourusername/donor-receiver-platform?style=social)
