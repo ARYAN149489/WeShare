@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram name="Class-Diagram" id="class-diagram">
+        <mxGraphModel dx="656" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title-class" value="Class Diagram - WeShare Platform Models" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="350" y="20" width="470" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-class" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="100" width="280" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-attrs" value="- _id: ObjectId&#xa;- name: String&#xa;- email: String (unique, required)&#xa;- password: String (hashed, required)&#xa;- role: String (donor/receiver, required)&#xa;- phone: String&#xa;- location: {&#xa;    type: String = &#39;Point&#39;&#xa;    coordinates: [Number, Number]&#xa;  }&#xa;- address: String&#xa;- rating: Number (default: 0)&#xa;- createdAt: Date&#xa;- updatedAt: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="user-class" vertex="1">
+                    <mxGeometry y="26" width="280" height="194" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" parent="user-class" vertex="1">
+                    <mxGeometry y="220" width="280" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-methods" value="+ comparePassword(password: String): Boolean&#xa;+ generateAuthToken(): String&#xa;+ toJSON(): Object&#xa;+ calculateRating(): Number&#xa;+ updateLocation(coords: Array): void&#xa;+ getDonations(): Array&lt;Donation&gt;&#xa;+ getRequests(): Array&lt;Request&gt;&#xa;+ getNotifications(): Array&lt;Notification&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="user-class" vertex="1">
+                    <mxGeometry y="228" width="280" height="112" as="geometry"/>
+                </mxCell>
+                <mxCell id="donation-class" value="Donation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="100" width="300" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="donation-attrs" value="- _id: ObjectId&#xa;- donor: ObjectId (ref: &#39;User&#39;, required)&#xa;- category: String (required)&#xa;- title: String (required)&#xa;- description: String&#xa;- quantity: Number (required)&#xa;- unit: String&#xa;- images: Array&lt;String&gt;&#xa;- location: {&#xa;    type: String = &#39;Point&#39;&#xa;    coordinates: [Number, Number]&#xa;  }&#xa;- address: String (required)&#xa;- pickupSchedule: Date&#xa;- status: String (available/reserved/completed)&#xa;- expiryDate: Date&#xa;- receiverId: ObjectId (ref: &#39;User&#39;)&#xa;- createdAt: Date&#xa;- updatedAt: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="donation-class" vertex="1">
+                    <mxGeometry y="26" width="300" height="244" as="geometry"/>
+                </mxCell>
+                <mxCell id="donation-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" parent="donation-class" vertex="1">
+                    <mxGeometry y="270" width="300" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="donation-methods" value="+ isAvailable(): Boolean&#xa;+ reserve(receiverId: ObjectId): void&#xa;+ complete(): void&#xa;+ isExpired(): Boolean&#xa;+ getDonor(): User&#xa;+ getReceiver(): User&#xa;+ getNearbyReceivers(distance: Number): Array&lt;User&gt;&#xa;+ notifyNearbyReceivers(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="donation-class" vertex="1">
+                    <mxGeometry y="278" width="300" height="112" as="geometry"/>
+                </mxCell>
+                <mxCell id="request-class" value="Request" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="100" width="290" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="request-attrs" value="- _id: ObjectId&#xa;- receiver: ObjectId (ref: &#39;User&#39;, required)&#xa;- donation: ObjectId (ref: &#39;Donation&#39;)&#xa;- category: String (required)&#xa;- title: String (required)&#xa;- description: String&#xa;- quantity: Number (required)&#xa;- urgency: String (low/medium/high)&#xa;- status: String (pending/accepted/rejected)&#xa;- deliveryAddress: String&#xa;- message: String&#xa;- createdAt: Date&#xa;- updatedAt: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="request-class" vertex="1">
+                    <mxGeometry y="26" width="290" height="194" as="geometry"/>
+                </mxCell>
+                <mxCell id="request-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" parent="request-class" vertex="1">
+                    <mxGeometry y="220" width="290" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="request-methods" value="+ accept(donationId: ObjectId): void&#xa;+ reject(reason: String): void&#xa;+ cancel(): void&#xa;+ isPending(): Boolean&#xa;+ getReceiver(): User&#xa;+ getDonation(): Donation&#xa;+ notifyDonor(): void&#xa;+ sendConfirmationEmail(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="request-class" vertex="1">
+                    <mxGeometry y="228" width="290" height="122" as="geometry"/>
+                </mxCell>
+                <mxCell id="notification-class" value="Notification" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="540" width="300" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="notification-attrs" value="- _id: ObjectId&#xa;- recipient: ObjectId (ref: &#39;User&#39;, required)&#xa;- sender: ObjectId (ref: &#39;User&#39;)&#xa;- type: String (required)&#xa;- title: String (required)&#xa;- message: String (required)&#xa;- relatedDonation: ObjectId (ref: &#39;Donation&#39;)&#xa;- relatedRequest: ObjectId (ref: &#39;Request&#39;)&#xa;- isRead: Boolean (default: false)&#xa;- createdAt: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="notification-class" vertex="1">
+                    <mxGeometry y="26" width="300" height="144" as="geometry"/>
+                </mxCell>
+                <mxCell id="notification-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" parent="notification-class" vertex="1">
+                    <mxGeometry y="170" width="300" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="notification-methods" value="+ markAsRead(): void&#xa;+ getRecipient(): User&#xa;+ getSender(): User&#xa;+ getDonation(): Donation&#xa;+ getRequest(): Request" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="notification-class" vertex="1">
+                    <mxGeometry y="178" width="300" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-donation" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="user-class" target="donation-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="560" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-user-donation-label" value="creates" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="380" y="165" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-donation-card1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="330" y="165" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-donation-card2" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="420" y="165" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-request" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="user-class" target="request-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="560" y="400" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="420" y="270"/>
+                            <mxPoint x="420" y="275"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-user-request-label" value="makes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="580" y="250" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-request-card1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="330" y="250" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-request-card2" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="800" y="250" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-donation-request" value="" style="endArrow=open;endFill=0;endSize=16;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeWidth=2;dashed=1;" parent="1" source="donation-class" target="request-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="560" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-donation-request-label" value="fulfills" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="770" y="305" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-donation-request-card1" value="0..1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="730" y="285" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-donation-request-card2" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="800" y="350" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-notification" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="user-class" target="notification-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="500" as="sourcePoint"/>
+                        <mxPoint x="560" y="500" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="220" y="600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-user-notification-label" value="receives" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="280" y="575" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-notification-card1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="200" y="445" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-user-notification-card2" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="420" y="590" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-donation-notification" value="" style="endArrow=open;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;dashed=1;" parent="1" source="donation-class" target="notification-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="500" as="sourcePoint"/>
+                        <mxPoint x="560" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-donation-notification-label" value="triggers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="620" y="505" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel-request-notification" value="" style="endArrow=open;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;dashed=1;" parent="1" source="request-class" target="notification-class" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="400" y="500" as="sourcePoint"/>
+                        <mxPoint x="560" y="500" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="985" y="600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel-request-notification-label" value="triggers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="840" y="575" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-box-class" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="540" width="280" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-title-class" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="80" y="540" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-comp" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="590" as="sourcePoint"/>
+                        <mxPoint x="200" y="590" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-comp-text" value="Composition (has-a)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="210" y="575" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-assoc" value="" style="endArrow=open;endFill=0;endSize=16;html=1;rounded=0;strokeWidth=2;dashed=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="620" as="sourcePoint"/>
+                        <mxPoint x="200" y="620" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-assoc-text" value="Association (uses)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="210" y="605" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-card" value="1, 0..1, 0..*, 1..*" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="100" y="640" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-card-text" value="Cardinality" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="210" y="635" width="130" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

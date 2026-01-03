@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:30:00.000Z" agent="5.0" version="22.1.11">
+  <diagram name="Login-Sequence" id="seq-login">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title-seq1" value="Sequence Diagram - User Login Process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="470" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Actors/Objects -->
+        <mxCell id="user-login" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="browser-login" value="React App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="authcontext-login" value="AuthContext" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api-login" value="API Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="backend-login" value="Express Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="780" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db-login" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="990" y="105" width="80" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="lifeline-user" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="user-login">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="180" as="sourcePoint" />
+            <mxPoint x="100" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifeline-browser" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="750" as="sourcePoint" />
+            <mxPoint x="290" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifeline-context" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="750" as="sourcePoint" />
+            <mxPoint x="470" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifeline-api" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="750" as="sourcePoint" />
+            <mxPoint x="650" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifeline-backend" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="835" y="750" as="sourcePoint" />
+            <mxPoint x="835" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifeline-db" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1030" y="750" as="sourcePoint" />
+            <mxPoint x="1030" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Activation Boxes -->
+        <mxCell id="act-browser-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="285" y="200" width="10" height="520" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-context-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="465" y="270" width="10" height="410" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-api-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="645" y="330" width="10" height="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-backend-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="830" y="390" width="10" height="210" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-db-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1025" y="450" width="10" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Messages -->
+        <!-- 1. Enter credentials -->
+        <mxCell id="msg-1" value="1: Enter email &amp; password" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="200" as="sourcePoint" />
+            <mxPoint x="285" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 2. Display form -->
+        <mxCell id="msg-2" value="2: Display login form" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="285" y="230" as="sourcePoint" />
+            <mxPoint x="100" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. Submit form -->
+        <mxCell id="msg-3" value="3: Click login button" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="270" as="sourcePoint" />
+            <mxPoint x="285" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 4. Call login -->
+        <mxCell id="msg-4" value="4: login(email, password)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="295" y="300" as="sourcePoint" />
+            <mxPoint x="465" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 5. Call API -->
+        <mxCell id="msg-5" value="5: api.login(credentials)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="475" y="330" as="sourcePoint" />
+            <mxPoint x="645" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6. HTTP POST -->
+        <mxCell id="msg-6" value="6: POST /api/auth/login" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="655" y="360" as="sourcePoint" />
+            <mxPoint x="830" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 7. Validate input -->
+        <mxCell id="msg-7" value="7: Validate input" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="840" y="390" as="sourcePoint" />
+            <mxPoint x="870" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg-7-return" value="" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="870" y="410" as="sourcePoint" />
+            <mxPoint x="840" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 8. Find user -->
+        <mxCell id="msg-8" value="8: findOne({email})" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="840" y="450" as="sourcePoint" />
+            <mxPoint x="1025" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 9. Return user -->
+        <mxCell id="msg-9" value="9: user document" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1025" y="480" as="sourcePoint" />
+            <mxPoint x="840" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 10. Compare password -->
+        <mxCell id="msg-10" value="10: bcrypt.compare(password)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="840" y="510" as="sourcePoint" />
+            <mxPoint x="920" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg-10-return" value="" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="920" y="530" as="sourcePoint" />
+            <mxPoint x="840" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 11. Generate token -->
+        <mxCell id="msg-11" value="11: jwt.sign(payload)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="840" y="560" as="sourcePoint" />
+            <mxPoint x="920" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg-11-return" value="token" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="920" y="580" as="sourcePoint" />
+            <mxPoint x="840" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 12. Return response -->
+        <mxCell id="msg-12" value="12: {token, user}" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="830" y="610" as="sourcePoint" />
+            <mxPoint x="655" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 13. Return to context -->
+        <mxCell id="msg-13" value="13: response data" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="645" y="640" as="sourcePoint" />
+            <mxPoint x="475" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 14. Store token -->
+        <mxCell id="msg-14" value="14: localStorage.setItem('token')" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="475" y="660" as="sourcePoint" />
+            <mxPoint x="560" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 15. Update state -->
+        <mxCell id="msg-15" value="15: setUser(user), setIsAuthenticated(true)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="465" y="680" as="sourcePoint" />
+            <mxPoint x="295" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 16. Navigate -->
+        <mxCell id="msg-16" value="16: Navigate to dashboard" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="285" y="710" as="sourcePoint" />
+            <mxPoint x="100" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="Create-Donation-Sequence" id="seq-donation">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0-d" />
+        <mxCell id="1-d" parent="0-d" />
+        
+        <!-- Title -->
+        <mxCell id="title-seq2" value="Sequence Diagram - Create Donation Process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="320" y="20" width="530" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Actors/Objects -->
+        <mxCell id="donor" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1-d">
+          <mxGeometry x="60" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="form" value="Donation Form" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="200" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api-d" value="API Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="400" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="backend-d" value="Donation Route" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="590" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="auth-mid" value="authMiddleware" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="780" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db-d" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1-d">
+          <mxGeometry x="970" y="105" width="80" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="ll-donor" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="700" as="sourcePoint" />
+            <mxPoint x="80" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-form" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="255" y="700" as="sourcePoint" />
+            <mxPoint x="255" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-api-d" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="700" as="sourcePoint" />
+            <mxPoint x="450" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-backend-d" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="700" as="sourcePoint" />
+            <mxPoint x="645" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-auth" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="835" y="700" as="sourcePoint" />
+            <mxPoint x="835" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-db-d" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-d">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1010" y="700" as="sourcePoint" />
+            <mxPoint x="1010" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Activation Boxes -->
+        <mxCell id="act-form" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1-d">
+          <mxGeometry x="250" y="200" width="10" height="470" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-api-d" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1-d">
+          <mxGeometry x="445" y="310" width="10" height="320" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-backend-d" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1-d">
+          <mxGeometry x="640" y="370" width="10" height="230" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-auth" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1-d">
+          <mxGeometry x="830" y="400" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-db-d" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1-d">
+          <mxGeometry x="1005" y="500" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Messages -->
+        <mxCell id="m1-d" value="1: Navigate to Create Donation" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="80" y="200" as="sourcePoint" />
+            <mxPoint x="250" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m2-d" value="2: Display form" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="250" y="230" as="sourcePoint" />
+            <mxPoint x="80" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m3-d" value="3: Fill donation details&#xa;(category, title, quantity, location)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="80" y="270" as="sourcePoint" />
+            <mxPoint x="250" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m4-d" value="4: Submit form" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="80" y="310" as="sourcePoint" />
+            <mxPoint x="250" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m5-d" value="5: api.createDonation(formData)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="340" as="sourcePoint" />
+            <mxPoint x="445" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m6-d" value="6: POST /api/donations" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="455" y="370" as="sourcePoint" />
+            <mxPoint x="640" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m7-d" value="7: Verify JWT token" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="650" y="400" as="sourcePoint" />
+            <mxPoint x="830" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m8-d" value="8: decoded user data" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="830" y="430" as="sourcePoint" />
+            <mxPoint x="650" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m9-d" value="9: Check isDonor role" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="650" y="450" as="sourcePoint" />
+            <mxPoint x="730" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m10-d" value="10: Validate donation data" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="650" y="480" as="sourcePoint" />
+            <mxPoint x="730" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m11-d" value="11: Create donation document" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="650" y="510" as="sourcePoint" />
+            <mxPoint x="1005" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m12-d" value="12: donation saved" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1005" y="540" as="sourcePoint" />
+            <mxPoint x="650" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m13-d" value="13: Create notifications for nearby receivers" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="650" y="570" as="sourcePoint" />
+            <mxPoint x="1005" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m14-d" value="14: {donation data}" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="640" y="600" as="sourcePoint" />
+            <mxPoint x="455" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m15-d" value="15: response data" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="445" y="630" as="sourcePoint" />
+            <mxPoint x="260" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="m16-d" value="16: Show success message" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-d">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="250" y="660" as="sourcePoint" />
+            <mxPoint x="80" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="Fulfill-Request-Sequence" id="seq-fulfill">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0-f" />
+        <mxCell id="1-f" parent="0-f" />
+        
+        <!-- Title -->
+        <mxCell id="title-seq3" value="Sequence Diagram - Fulfill Donation Request Process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="280" y="20" width="610" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Actors/Objects -->
+        <mxCell id="donor-f" value="Donor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1-f">
+          <mxGeometry x="50" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ui-f" value="Request List UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="170" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api-f" value="API Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="350" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="request-route" value="Request Route" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="520" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="donation-route" value="Donation Route" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="700" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="email-f" value="Email Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="880" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db-f" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1-f">
+          <mxGeometry x="1060" y="105" width="80" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="ll-donor-f" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="750" as="sourcePoint" />
+            <mxPoint x="70" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-ui-f" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="225" y="750" as="sourcePoint" />
+            <mxPoint x="225" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-api-f" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="750" as="sourcePoint" />
+            <mxPoint x="400" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-request" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="575" y="750" as="sourcePoint" />
+            <mxPoint x="575" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-donation" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="755" y="750" as="sourcePoint" />
+            <mxPoint x="755" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-email-f" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="935" y="750" as="sourcePoint" />
+            <mxPoint x="935" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-db-f" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1-f">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1100" y="750" as="sourcePoint" />
+            <mxPoint x="1100" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Activation Boxes -->
+        <mxCell id="act-ui-f" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1-f">
+          <mxGeometry x="220" y="200" width="10" height="520" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-api-f" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1-f">
+          <mxGeometry x="395" y="280" width="10" height="410" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-request" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1-f">
+          <mxGeometry x="570" y="340" width="10" height="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-donation" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1-f">
+          <mxGeometry x="750" y="430" width="10" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-email-f" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1-f">
+          <mxGeometry x="930" y="570" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-db-f" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1-f">
+          <mxGeometry x="1095" y="380" width="10" height="240" as="geometry" />
+        </mxCell>
+
+        <!-- Messages -->
+        <mxCell id="mf1" value="1: Browse donation requests" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="70" y="200" as="sourcePoint" />
+            <mxPoint x="220" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf2" value="2: Display request list" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="220" y="230" as="sourcePoint" />
+            <mxPoint x="70" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf3" value="3: Click 'Fulfill This Request'" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="70" y="260" as="sourcePoint" />
+            <mxPoint x="220" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf4" value="4: Show modal confirmation" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="220" y="280" as="sourcePoint" />
+            <mxPoint x="70" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf5" value="5: Confirm fulfillment" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="70" y="310" as="sourcePoint" />
+            <mxPoint x="220" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf6" value="6: api.fulfillRequest(requestId)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="230" y="340" as="sourcePoint" />
+            <mxPoint x="395" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf7" value="7: POST /api/requests/:id/fulfill" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="405" y="370" as="sourcePoint" />
+            <mxPoint x="570" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf8" value="8: Find request by ID" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="400" as="sourcePoint" />
+            <mxPoint x="1095" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf9" value="9: request document" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1095" y="430" as="sourcePoint" />
+            <mxPoint x="580" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf10" value="10: Create new donation (status: reserved)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="460" as="sourcePoint" />
+            <mxPoint x="750" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf11" value="11: Save donation" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="760" y="490" as="sourcePoint" />
+            <mxPoint x="1095" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf12" value="12: donation created" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1095" y="520" as="sourcePoint" />
+            <mxPoint x="760" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf13" value="13: Update request (status: accepted, donation link)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="550" as="sourcePoint" />
+            <mxPoint x="1095" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf14" value="14: Send email to receiver" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="580" as="sourcePoint" />
+            <mxPoint x="930" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf15" value="15: Email sent" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="930" y="610" as="sourcePoint" />
+            <mxPoint x="580" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf16" value="16: Create notification (type: request_accepted)" style="endArrow=block;endFill=1;html=1;rounded=0;fontSize=11;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="580" y="640" as="sourcePoint" />
+            <mxPoint x="1095" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf17" value="17: {donation, request}" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="570" y="670" as="sourcePoint" />
+            <mxPoint x="405" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf18" value="18: response data" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="395" y="700" as="sourcePoint" />
+            <mxPoint x="230" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="mf19" value="19: Navigate to Manage Requests" style="endArrow=open;endFill=0;html=1;rounded=0;fontSize=11;dashed=1;" edge="1" parent="1-f">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="220" y="720" as="sourcePoint" />
+            <mxPoint x="70" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
