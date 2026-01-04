@@ -1,5 +1,7 @@
 # 🤝 Donor-Receiver Platform
 
+🌐 **Live Website:** [https://wesshare.netlify.app/](https://wesshare.netlify.app/)
+
 A full-stack web application connecting generous donors with those in need. Facilitates seamless donation of food, clothes, electronics, books, and more to help communities thrive.
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green) ![Node.js](https://img.shields.io/badge/Node.js-v18+-blue) ![React](https://img.shields.io/badge/React-v18.2-blue) ![License](https://img.shields.io/badge/license-MIT-green)
